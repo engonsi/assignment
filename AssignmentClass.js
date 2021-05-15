@@ -17,6 +17,11 @@ class AssignmentClass {
 
     if (entry.action && entry.time) {
       // check entry fields validity
+
+      /* this section can be replaced with any Storage Function such as
+       saving to filesystem, database, localStorage (frontEnd Calls), ..etc 
+       for data persistance*/
+
       this.items.push(entry)
       console.log(entry, 'Added Successfully!') // log success
     } else {
@@ -36,6 +41,10 @@ class AssignmentClass {
     ]
 
     //loop through stored data, and apply average to time entry for each action
+
+    /* this section can be replaced with any Storage Function such as
+       reading from filesystem, database, localStorage (frontEnd Calls), etc*/
+
     uniqueActions.forEach((action) => {
       let oneAction = this.items.filter((item) => item.action === action)
       let times = Object.entries(oneAction).map((item) => item[1].time)
@@ -50,9 +59,4 @@ class AssignmentClass {
   }
 }
 
-const myApp = new AssignmentClass() // instantiate the Class
-
-myApp.addAction('{ "action": "jump", "time": 100 }') //call method addAction with json serialized string as augment
-myApp.addAction('{ "action": "run", "time": 75 }')
-myApp.addAction('{ "action": "jump", "time": 200 }')
-console.log('Statistics:', myApp.getStats()) // log getStatus results to console
+module.exports = AssignmentClass //export AssignmentClass
