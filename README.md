@@ -37,7 +37,7 @@ Output after the 3 sample calls above would be:
 2. Clone this repository into your local machine using the terminal (mac) or Gitbash (PC) `> git clone CLONEURL`
 3. CD to the folder `cd FOLDERNAME`
 4. Run `npm install` to install the project dependencies
-5. Run `node AssignmentClass` to run application
+5. Run `node App` to run application
 
 ## Usage
 
